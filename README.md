@@ -1,1 +1,24 @@
 "# Puppet" 
+Lab Setup Instructions
+
+git clone this repository or download master.zip and unzip to the puppet-fundamentals-lab directory and cd to it.
+
+Download the CentOS 6.5 Vagrant box to the puppet-fundamentals-lab directory: https://www.dropbox.com/s/206lcenz3o45c79/centos65.box?dl=1 
+
+Ensure the file is saved as centos65.box.
+
+Add the CentOS 6.5 box you just downloaded: vagrant box add centos65-base centos65.box
+
+Download the Ubuntu 14.04 Vagrant box to the same directory: http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+
+Add the Ubuntu box: vagrant box add trusty64 trusty-server-cloudimg-amd64-vagrant-disk1.box
+
+Booting the Puppet Master Server
+
+cd into the puppetmaster subdirectory and launch the VM: vagrant up
+
+Once the machine is booted, SSH into it: vagrant ssh
+
+Windows 2008 R2 ISO
+
+http://www.microsoft.com/en-us/download/details.aspx?id=11093
