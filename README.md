@@ -22,3 +22,15 @@ Once the machine is booted, SSH into it: vagrant ssh
 Windows 2008 R2 ISO
 
 http://www.microsoft.com/en-us/download/details.aspx?id=11093
+-----------------------------------------------------------------------------------------------------------------------------------------
+"Installing Apache and Passenger" clip of the "Installing and Configuring the Puppet Master" module:
+
+(Optional) From your host machine, take a snapshot: vagrant snapshot save puppetmaster
+Install the following: 
+sudo gem install rake --version 10.4.2 
+sudo gem install rack --version 1.6.0 
+sudo gem install passenger --version 4.0.56
+sudo gem install daemon_controller --version 1.2.0
+------------------------------------------------------------------------------------------------------------------------------------------
+Install the Passenger Apache module: 
+sudo passenger-install-apache2-module
