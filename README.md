@@ -34,3 +34,4 @@ sudo gem install daemon_controller --version 1.2.0
 ------------------------------------------------------------------------------------------------------------------------------------------
 Install the Passenger Apache module: 
 sudo passenger-install-apache2-module
+
