@@ -3,7 +3,7 @@ Lab Setup Instructions
 
 git clone this repository or download master.zip and unzip to the puppet-fundamentals-lab directory and cd to it.
 
-Download the CentOS 6.5 Vagrant box to the puppet-fundamentals-lab directory: https://www.dropbox.com/s/206lcenz3o45c79/centos65.box?dl=1 
+Download the CentOS 6.5 Vagrant box to the puppet-fundamentals-lab directory.
 
 Ensure the file is saved as centos65.box.
 
