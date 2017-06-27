@@ -1,0 +1,52 @@
+cd puppet-fundamentals-lab
+vagrant box add trusty64 trusty-server-cloudimg-amd64-vagrant-disk1.box
+---------------------
+Booting Slaves
+wiki:
+cd wiki
+vagrant up
+sudo -i
+echo 172.31.0.201 puppetmaster >> /etc/hosts
+cat /etc/hosts
+sudo yum -y install http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
+sudo yum -y install puppet
+sudo yum -y install nano
+sudo nano /etc/puppet/puppet.conf
+==>Add  server =puppetmaster under [agent]
+sudo puppet agent --verbose --no-daemonize --onetime
+
+wikitest:
+cd wikitest
+vagrant up
+sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+sudo dpkg -i puppetlabs-release-trusty.deb
+sudo apt-get update
+sudo apt-get install puppet
+sudo nano /etc/puppet/puppet.conf
+==>add [agent]
+server =puppetmaster
+sudo puppet agent --enable
+sudo puppet agent --verbose --no-daemonize --onetime
+
+----------In puppet master---
+sudo puppet cert list
+sudo puppet cert sign wiki
+
+reissue certficates in wiki and wikitest.
+
+--------------------------------------
+Sample Test Run
+from puppetmaster:sudo nano /etc/puppet/environments/production/manifests/nodes.pp
+node 'wiki' {
+  file {'/capg.txt':
+   ensure =>'present',
+content => inline_template("accessed"),
+}
+}
+
+
+
+
+
+
+
